@@ -56,6 +56,17 @@
 #define COLOR_OLIVE 0x808000AA
 #define COLOR_ORANGERED 0xFF4500AA
 #define COLOR_WELCOME 0x00ccffAA
+//---------------------------------------
+#define DIALOG_ID_CHECKPOINT 1
+#define DIALOG_NULL 0
+
+
+
+
+
+
+
+
 
 main()
 {
@@ -64,14 +75,16 @@ main()
 	print("----------------------------------\n");
 }
 
+
+
 public OnPlayerConnect(playerid)
 {
-new playername[MAX_PLAYER_NAME];
-    GetPlayerName(playerid, playername, sizeof(playername));
-    new message[128];
-    format(message, sizeof(message), "%s(%d)has joined the war from Unknown", playername, playerid);
-    SendClientMessageToAll(COLOR_WELCOME, message);
-    return 1;
+		new playername[MAX_PLAYER_NAME];
+    	GetPlayerName(playerid, playername, sizeof(playername));
+    	new message[128];
+    	format(message, sizeof(message), "%s (%d) has joined the war from Unknown", playername, playerid);
+    	SendClientMessageToAll(COLOR_WELCOME, message);
+        return 1;
 }
 
 public OnPlayerCommandText(playerid, cmdtext[])
@@ -81,7 +94,21 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 public OnPlayerSpawn(playerid)
 {
+	SpawnPlayerCheckpoint(playerid);
 	return 1;
+}
+
+public SpawnPlayerCheckpoint(playerid)
+{
+    new Float:playerPos[3];
+    GetPlayerPos(playerid, playerPos[0], playerPos[1], playerPos[2]);
+    new Float:offsetX = 2.0;
+    new Float:offsetY = 2.0;
+    new Float:checkpointPos[3];
+    checkpointPos[0] = playerPos[0] + offsetX;
+    checkpointPos[1] = playerPos[1] + offsetY;
+    checkpointPos[2] = playerPos[2];
+    SetPlayerCheckpoint(0, checkpointPos[0], checkpointPos[1], checkpointPos[2], 3.0);
 }
 
 public OnPlayerRequestClass(playerid, classid)
@@ -92,5 +119,12 @@ public OnPlayerRequestClass(playerid, classid)
 public OnGameModeInit()
 {
 	SetGameModeText("Zombies And Humans/TDM/RP");
+	return 1;
+}
+
+public OnPlayerEnterCheckpoint(playerid)
+{
+	ShowPlayerDialog(playerid, DIALOG_NULL, DIALOG_STYLE_LIST, "Shop", "Weapons\nKits\nSpecial Skins", "Select", "Close");
+
 	return 1;
 }
