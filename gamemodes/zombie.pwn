@@ -15,10 +15,10 @@
 
 
 
+//---------------- FORWARD DECLARATION ----------------------//
 
 
-
-
+forward SpawnPlayerCheckpoint(playerid);
 
 
 
