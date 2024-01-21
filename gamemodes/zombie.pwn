@@ -79,12 +79,12 @@ main()
 
 public OnPlayerConnect(playerid)
 {
-		new playername[MAX_PLAYER_NAME];
-    	GetPlayerName(playerid, playername, sizeof(playername));
-    	new message[128];
-    	format(message, sizeof(message), "%s (%d) has joined the war from Unknown", playername, playerid);
-    	SendClientMessageToAll(COLOR_WELCOME, message);
-        return 1;
+	new playername[MAX_PLAYER_NAME];
+    GetPlayerName(playerid, playername, sizeof(playername));
+    new message[128];
+    format(message, sizeof(message), "%s(%d)has joined the war from Unknown", playername, playerid);
+    SendClientMessageToAll(COLOR_WELCOME, message);
+    return 1;
 }
 
 public OnPlayerCommandText(playerid, cmdtext[])
