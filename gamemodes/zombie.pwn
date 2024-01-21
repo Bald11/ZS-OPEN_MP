@@ -66,7 +66,7 @@ main()
 
 public OnPlayerConnect(playerid)
 {
-new playername[MAX_PLAYER_NAME];
+	new playername[MAX_PLAYER_NAME];
     GetPlayerName(playerid, playername, sizeof(playername));
     new message[128];
     format(message, sizeof(message), "%s(%d)has joined the war from Unknown", playername, playerid);
