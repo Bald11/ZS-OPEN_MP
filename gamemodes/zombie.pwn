@@ -12,10 +12,12 @@
 #include <zcmd>
 
 #pragma tabsize 0
+
 //-------------------- DEFINES -----------------------------//
 
 
 
+//---------------- FORWARD DECLARATION ----------------------//
 
 
 //---------------- FORWARD DECLARATION ----------------------//
@@ -55,7 +57,7 @@ forward DestroyObjectTimer(objectid);
 #define COLOR_OLIVE 0x808000AA
 #define COLOR_ORANGERED 0xFF4500AA
 #define COLOR_WELCOME 0x00ccffAA
-//---------------------------------------
+//----------------------- DEFINES DIALOGS -----------------------//
 #define DIALOG_ID_CHECKPOINT 0
 #define DIALOG_SHOPCHECKPOINT 1
 #define DIALOG_WEAPONSHOP 2

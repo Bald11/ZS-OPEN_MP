@@ -728,6 +728,8 @@ Executing Server Config...
 [01:08:20] [Info] [join] Bald_11 has joined the server (0:192.168.1.105)
 [01:11:07] [Info] [death] Bald_11 died 54
 [01:11:15] [Info] [part] Bald_11 has left the server (0:1)
+<<<<<<< Updated upstream
+=======
 Starting open.mp server (1.1.0.2612) from commit 8829f9f600c36b972b1fc021198bd649afb13fb0
 Loading component Actors.dll
 	Successfully loaded component Actors (1.1.0.2612) with UID c81ca021eae2ad5c
@@ -1089,3 +1091,6 @@ Executing Server Config...
 [21:39:44] [Info] ----------------------------------
 
 [21:39:44] [Info] Legacy Network started on port 7777
+[21:39:50] [Info] [connection] incoming connection: 127.0.0.1:60488 id: 0
+[21:39:50] [Info] [join] Empyrium[HH] has joined the server (0:127.0.0.1)
+>>>>>>> Stashed changes
